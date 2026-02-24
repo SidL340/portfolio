@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Siddhartha Patel Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="login-page">
+    <div class="login-bg">
+        <div class="login-orb orb-1"></div>
+        <div class="login-orb orb-2"></div>
+        <div class="login-orb orb-3"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <span>SP</span>
+                </div>
+                <h1>Admin Access</h1>
+                <p>Sign in to manage your portfolio</p>
+            </div>
+
+            <form id="login-form" onsubmit="handleLogin(event)" autocomplete="off">
+                <div class="field-group">
+                    <label for="email">Email Address</label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <input type="email" id="email" placeholder="your@gmail.com" required autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <div class="field-wrap">
+                        <svg class="field-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                        <button type="button" class="toggle-pass" onclick="togglePass()">
+                            <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="login-error" class="login-error" style="display:none">
+                    ❌ Invalid credentials. Access denied.
+                </div>
+
+                <button type="submit" class="login-btn" id="login-btn">
+                    <span id="btn-text">Sign In</span>
+                    <div class="btn-spinner" id="btn-spinner"></div>
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <a href="index.html">← Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Auth Config ─────────────────────────────
+        // Only Siddhartha's personal email + password grants access
+        const ADMIN_EMAIL = 'siddharthapatel666@gmail.com';
+        const ADMIN_PASS = '#Include9845';
+
+        // Check if already logged in
+        if (sessionStorage.getItem('sp_admin') === 'true') {
+            window.location.href = 'admin.html';
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const pass = document.getElementById('password').value;
+            const errEl = document.getElementById('login-error');
+            const btn = document.getElementById('login-btn');
+            const spinner = document.getElementById('btn-spinner');
+            const btnText = document.getElementById('btn-text');
+
+            errEl.style.display = 'none';
+            btn.disabled = true;
+            btnText.style.opacity = '0';
+            spinner.style.display = 'block';
+
+            setTimeout(() => {
+                if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
+                    sessionStorage.setItem('sp_admin', 'true');
+                    window.location.href = 'admin.html';
+                } else {
+                    errEl.style.display = 'block';
+                    btn.disabled = false;
+                    btnText.style.opacity = '1';
+                    spinner.style.display = 'none';
+                    document.getElementById('login-form').classList.add('shake');
+                    setTimeout(() => document.getElementById('login-form').classList.remove('shake'), 500);
+                }
+            }, 1000);
+        }
+
+        function togglePass() {
+            const input = document.getElementById('password');
+            const icon = document.getElementById('eye-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.setAttribute('stroke', '#7c3aed');
+            } else {
+                input.type = 'password';
+                icon.setAttribute('stroke', 'currentColor');
+            }
+        }
+    </script>
+</body>
+
+</html>

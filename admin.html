@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Siddhartha Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <span class="sidebar-logo">SP</span>
+            <div>
+                <strong>Siddhartha Patel</strong>
+                <small>Portfolio Admin</small>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-tab="overview">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" />
+                    <rect x="14" y="3" width="7" height="7" />
+                    <rect x="14" y="14" width="7" height="7" />
+                    <rect x="3" y="14" width="7" height="7" />
+                </svg>
+                Overview
+            </a>
+            <a href="#" class="sidebar-link" data-tab="profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+                Profile & About
+            </a>
+            <a href="#" class="sidebar-link" data-tab="projects">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Projects
+            </a>
+            <a href="#" class="sidebar-link" data-tab="skills">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10" />
+                    <line x1="12" y1="20" x2="12" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="14" />
+                </svg>
+                Skills
+            </a>
+            <a href="#" class="sidebar-link" data-tab="photo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                </svg>
+                Photos
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="index.html" class="sidebar-link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+                View Portfolio
+            </a>
+            <button class="sidebar-link logout-btn" onclick="logout()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="admin-topbar">
+            <h2 id="tab-title">Overview</h2>
+            <div class="admin-user">
+                <span class="admin-avatar">SP</span>
+                <span>Siddhartha Patel</span>
+            </div>
+        </div>
+
+        <!-- Tab: Overview -->
+        <div class="tab-panel active" id="tab-overview">
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <div class="asc-icon">🚀</div>
+                    <div>
+                        <h3>10+</h3>
+                        <p>Projects</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="asc-icon">🏆</div>
+                    <div>
+                        <h3>5+</h3>
+                        <p>Certifications</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="asc-icon">⭐</div>
+                    <div>
+                        <h3>Samsung PRISM</h3>
+                        <p>Research Program</p>
+                    </div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="asc-icon">🎓</div>
+                    <div>
+                        <h3>May 2026</h3>
+                        <p>Graduating SRM IST</p>
+                    </div>
+                </div>
+            </div>
+            <div class="overview-note">
+                <h3>Welcome to your Portfolio Admin Panel</h3>
+                <p>Use the sidebar to edit your profile information, add/edit projects, update your skills, and manage
+                    photos. All changes are saved automatically and reflected on your portfolio instantly.</p>
+                <ul>
+                    <li>✅ <strong>Profile & About</strong> — Edit your name, bio, and about text</li>
+                    <li>✅ <strong>Projects</strong> — Add new projects or edit existing ones</li>
+                    <li>✅ <strong>Skills</strong> — Update skill percentages</li>
+                    <li>✅ <strong>Photos</strong> — Upload a new profile photo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tab: Profile -->
+        <div class="tab-panel" id="tab-profile">
+            <div class="admin-form-card">
+                <h3>Profile Information</h3>
+                <div class="admin-field">
+                    <label>Full Name</label>
+                    <input type="text" id="p-name" placeholder="Siddhartha Patel">
+                </div>
+                <div class="admin-field">
+                    <label>About Text (supports HTML)</label>
+                    <textarea id="p-about" rows="8" placeholder="Write your about section here..."></textarea>
+                </div>
+                <div class="admin-field">
+                    <label>Resume Link (URL or leave as ./img/Resume.pdf)</label>
+                    <input type="text" id="p-resume" placeholder="./img/Resume.pdf">
+                </div>
+                <div class="admin-field">
+                    <label>LinkedIn URL</label>
+                    <input type="text" id="p-linkedin"
+                        placeholder="https://linkedin.com/in/siddhartha-patel-2b41b3281/">
+                </div>
+                <div class="admin-field">
+                    <label>GitHub URL</label>
+                    <input type="text" id="p-github" placeholder="https://github.com/SidL340/">
+                </div>
+                <button class="admin-save-btn" onclick="saveProfile()">💾 Save Profile</button>
+                <div class="save-msg" id="profile-msg"></div>
+            </div>
+        </div>
+
+        <!-- Tab: Projects -->
+        <div class="tab-panel" id="tab-projects">
+            <div class="admin-form-card">
+                <h3>Add New Project</h3>
+                <div class="admin-field">
+                    <label>Project Title</label>
+                    <input type="text" id="proj-title" placeholder="e.g. Traffic Sign Recognition">
+                </div>
+                <div class="admin-field">
+                    <label>Category</label>
+                    <select id="proj-cat">
+                        <option value="ai">AI / ML</option>
+                        <option value="java">Java</option>
+                        <option value="web">Web</option>
+                        <option value="hardware">Hardware</option>
+                    </select>
+                </div>
+                <div class="admin-field">
+                    <label>Tags (comma separated)</label>
+                    <input type="text" id="proj-tags" placeholder="Python, TensorFlow, OpenCV">
+                </div>
+                <div class="admin-field">
+                    <label>Description</label>
+                    <textarea id="proj-desc" rows="5" placeholder="Describe your project..."></textarea>
+                </div>
+                <div class="admin-field">
+                    <label>Live Link (optional)</label>
+                    <input type="text" id="proj-link" placeholder="https://...">
+                </div>
+                <div class="admin-field">
+                    <label>Badge (optional, e.g. "⭐ Samsung PRISM" or "🔴 In Progress")</label>
+                    <input type="text" id="proj-badge" placeholder="Leave empty for none">
+                </div>
+                <button class="admin-save-btn" onclick="addProject()">➕ Add Project</button>
+                <div class="save-msg" id="project-msg"></div>
+            </div>
+
+            <div class="admin-form-card" style="margin-top:2rem">
+                <h3>Your Custom Projects</h3>
+                <div id="custom-projects-list"></div>
+            </div>
+        </div>
+
+        <!-- Tab: Skills -->
+        <div class="tab-panel" id="tab-skills">
+            <div class="admin-form-card">
+                <h3>Update Skill Levels</h3>
+                <p style="color:var(--admin-muted);font-size:1.4rem;margin-bottom:2rem">Drag the sliders to update your
+                    skill percentages. Changes are applied live.</p>
+                <div id="skills-editor"></div>
+                <button class="admin-save-btn" onclick="saveSkills()">💾 Save Skills</button>
+                <div class="save-msg" id="skills-msg"></div>
+            </div>
+        </div>
+
+        <!-- Tab: Photos -->
+        <div class="tab-panel" id="tab-photo">
+            <div class="admin-form-card">
+                <h3>Profile Photo</h3>
+                <p style="color:var(--admin-muted);font-size:1.4rem;margin-bottom:2rem">Upload a new profile photo. It
+                    will be used as your hero and about section photo.</p>
+                <div class="photo-preview-wrap">
+                    <img id="photo-preview" src="./img/img-2.png" alt="Profile Preview" class="photo-preview-img">
+                </div>
+                <div class="admin-field" style="margin-top:2rem">
+                    <label>Upload New Photo</label>
+                    <input type="file" id="photo-input" accept="image/*" onchange="previewPhoto(this)">
+                </div>
+                <button class="admin-save-btn" onclick="savePhoto()">💾 Save Photo</button>
+                <div class="save-msg" id="photo-msg"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // ── Auth Guard ───────────────────────────────
+        if (sessionStorage.getItem('sp_admin') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        function logout() {
+            sessionStorage.removeItem('sp_admin');
+            window.location.href = 'login.html';
+        }
+
+        // ── Tab Switching ────────────────────────────
+        const sidebarLinks = document.querySelectorAll('.sidebar-link[data-tab]');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+        const tabTitle = document.getElementById('tab-title');
+
+        const tabNames = { overview: 'Overview', profile: 'Profile & About', projects: 'Projects', skills: 'Skills', photo: 'Photos' };
+
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tab = link.dataset.tab;
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                tabPanels.forEach(p => p.classList.remove('active'));
+                link.classList.add('active');
+                document.getElementById('tab-' + tab).classList.add('active');
+                tabTitle.textContent = tabNames[tab] || tab;
+                if (tab === 'projects') renderCustomProjects();
+                if (tab === 'skills') renderSkillsEditor();
+            });
+        });
+
+        // ── Load saved data ──────────────────────────
+        function getData() {
+            try { return JSON.parse(localStorage.getItem('portfolio_data') || '{}'); } catch (e) { return {}; }
+        }
+        function saveData(data) {
+            const existing = getData();
+            localStorage.setItem('portfolio_data', JSON.stringify({ ...existing, ...data }));
+        }
+
+        // Initialize form values from saved data
+        window.addEventListener('DOMContentLoaded', () => {
+            const d = getData();
+            if (d.name) document.getElementById('p-name').value = d.name;
+            if (d.aboutText) document.getElementById('p-about').value = d.aboutText;
+            if (d.resumeLink) document.getElementById('p-resume').value = d.resumeLink;
+            if (d.linkedin) document.getElementById('p-linkedin').value = d.linkedin;
+            if (d.github) document.getElementById('p-github').value = d.github;
+            if (d.heroPhoto) document.getElementById('photo-preview').src = d.heroPhoto;
+        });
+
+        // ── Profile Save ─────────────────────────────
+        function saveProfile() {
+            const data = {
+                name: document.getElementById('p-name').value,
+                aboutText: document.getElementById('p-about').value,
+                resumeLink: document.getElementById('p-resume').value,
+                linkedin: document.getElementById('p-linkedin').value,
+                github: document.getElementById('p-github').value,
+            };
+            saveData(data);
+            showMsg('profile-msg', '✅ Profile saved!', true);
+        }
+
+        // ── Projects ─────────────────────────────────
+        function getCustomProjects() {
+            const d = getData();
+            return d.customProjects || [];
+        }
+
+        function addProject() {
+            const title = document.getElementById('proj-title').value.trim();
+            const desc = document.getElementById('proj-desc').value.trim();
+            const cat = document.getElementById('proj-cat').value;
+            const tags = document.getElementById('proj-tags').value.trim();
+            const link = document.getElementById('proj-link').value.trim();
+            const badge = document.getElementById('proj-badge').value.trim();
+
+            if (!title || !desc) {
+                showMsg('project-msg', '❌ Please fill title and description.', false);
+                return;
+            }
+
+            const projects = getCustomProjects();
+            projects.push({ id: Date.now(), title, desc, cat, tags, link, badge });
+            saveData({ customProjects: projects });
+            showMsg('project-msg', '✅ Project added!', true);
+            document.getElementById('proj-title').value = '';
+            document.getElementById('proj-desc').value = '';
+            document.getElementById('proj-tags').value = '';
+            document.getElementById('proj-link').value = '';
+            document.getElementById('proj-badge').value = '';
+            renderCustomProjects();
+        }
+
+        function deleteProject(id) {
+            const projects = getCustomProjects().filter(p => p.id !== id);
+            saveData({ customProjects: projects });
+            renderCustomProjects();
+        }
+
+        function renderCustomProjects() {
+            const list = document.getElementById('custom-projects-list');
+            const projects = getCustomProjects();
+            if (projects.length === 0) {
+                list.innerHTML = '<p style="color:var(--admin-muted);font-size:1.4rem">No custom projects added yet.</p>';
+                return;
+            }
+            list.innerHTML = projects.map(p => `
+        <div class="proj-list-item">
+          <div>
+            <strong>${p.title}</strong>
+            <span class="proj-cat-badge">${p.cat}</span>
+            <p style="color:var(--admin-muted);font-size:1.3rem;margin-top:0.5rem">${p.desc.slice(0, 100)}...</p>
+          </div>
+          <button class="delete-btn" onclick="deleteProject(${p.id})">🗑 Delete</button>
+        </div>
+      `).join('');
+        }
+
+        // ── Skills Editor ─────────────────────────────
+        const defaultSkills = [
+            { name: 'Java', val: 85 },
+            { name: 'Python', val: 80 },
+            { name: 'C++', val: 78 },
+            { name: 'SQL', val: 82 },
+            { name: 'MongoDB', val: 70 },
+            { name: 'HTML / CSS', val: 88 },
+            { name: 'Power BI', val: 75 },
+            { name: 'AI / ML', val: 72 },
+            { name: 'Communication', val: 92 },
+        ];
+
+        function renderSkillsEditor() {
+            const d = getData();
+            const skills = d.skills || defaultSkills;
+            const editor = document.getElementById('skills-editor');
+            editor.innerHTML = skills.map((s, i) => `
+        <div class="admin-skill-row">
+          <label>${s.name}</label>
+          <div class="skill-slider-wrap">
+            <input type="range" min="0" max="100" value="${s.val}" id="skill-${i}" oninput="document.getElementById('sv-${i}').textContent=this.value+'%'">
+            <span id="sv-${i}">${s.val}%</span>
+          </div>
+        </div>
+      `).join('');
+        }
+
+        function saveSkills() {
+            const d = getData();
+            const skills = (d.skills || defaultSkills).map((s, i) => ({
+                name: s.name,
+                val: parseInt(document.getElementById('skill-' + i)?.value || s.val)
+            }));
+            saveData({ skills });
+            showMsg('skills-msg', '✅ Skills saved!', true);
+        }
+
+        // ── Photo Upload ──────────────────────────────
+        let photoBase64 = null;
+
+        function previewPhoto(input) {
+            if (!input.files[0]) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                photoBase64 = e.target.result;
+                document.getElementById('photo-preview').src = photoBase64;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        function savePhoto() {
+            if (!photoBase64) {
+                showMsg('photo-msg', '❌ Please select a photo first.', false);
+                return;
+            }
+            saveData({ heroPhoto: photoBase64 });
+            showMsg('photo-msg', '✅ Photo saved! Reload your portfolio to see it.', true);
+        }
+
+        // ── Utility ───────────────────────────────────
+        function showMsg(id, text, success) {
+            const el = document.getElementById(id);
+            el.textContent = text;
+            el.className = 'save-msg ' + (success ? 'success' : 'error');
+            setTimeout(() => { el.className = 'save-msg'; el.textContent = ''; }, 4000);
+        }
+    </script>
+</body>
+
+</html>

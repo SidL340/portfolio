@@ -1,260 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Siddhartha Patel - Computer Science Engineer at SRM IST, AI/ML Developer, Samsung PRISM Researcher. Portfolio showcasing projects in AI, Java, Python, C++, SQL, MongoDB.">
+  <title>Siddhartha Patel | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>welcome to siddhartha patel  portfolio</title>
 </head>
-
 <body>
+  <!-- Particles Background -->
+  <div id="particles-container"></div>
+
   <!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <h1><span>S</span>iddhartha <span>P</span>atel</h1>
-          </a>
-        </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="Service">Projects</a></li>
-            <li><a href="#projects" data-after="Projects">Achievements</a></li>
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-                <li><a href="#contact" data-after="Contact">Education</a></li>
-          </ul>
+  <header id="header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="#hero"><span class="brand-sp">S</span>id<span class="brand-sp">.</span></a>
+      </div>
+      <nav class="nav-list" id="nav-list">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Projects</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="admin-btn" title="Admin Panel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </a>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
         </div>
       </div>
     </div>
-  </section>
+  </header>
   <!-- End Header -->
 
-
-  <!-- Hero Section  -->
+  <!-- Hero Section -->
   <section id="hero">
-    <div class="hero container">
-      <div>
-        <h1>Hello, <span></span></h1>
-        <h1>This is <span></span></h1>
-        <h1>Siddhartha <span></span></h1>
-        <a href="#projects" type="button" class="cta">Portfolio</a>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">👋 Hello World, I'm</p>
+        <h1 class="hero-name">Siddhartha<br><span class="highlight">Patel</span></h1>
+        <div class="hero-typewriter">
+          <span>I'm a </span><span id="typed-text" class="typed"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-sub">Computer Science Engineer @ SRM IST · Graduating May 2026<br>AI/ML Developer · Samsung PRISM Researcher</p>
+        <div class="hero-cta-group">
+          <a href="#services" class="btn btn-primary">View Projects</a>
+          <a href="./img/Resume.pdf" class="btn btn-outline" target="_blank" download>Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/SidL340/" target="_blank" class="social-link" title="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/siddhartha-patel-2b41b3281/" target="_blank" class="social-link" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/cdart_raut/" target="_blank" class="social-link" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-card">
+          <div class="profile-glow"></div>
+          <img src="./img/img-2.png" alt="Siddhartha Patel" class="profile-img" id="hero-photo">
+          <div class="profile-badge">
+            <span class="badge-dot"></span>
+            <span>Available for Opportunities</span>
+          </div>
+        </div>
+        <div class="floating-card card-1 reveal">
+          <span class="fc-icon">🤖</span>
+          <div><strong>AI / ML</strong><br><small>Deep Learning</small></div>
+        </div>
+        <div class="floating-card card-2 reveal">
+          <span class="fc-icon">🏆</span>
+          <div><strong>Samsung</strong><br><small>PRISM Researcher</small></div>
+        </div>
+        <div class="floating-card card-3 reveal">
+          <span class="fc-icon">🎓</span>
+          <div><strong>SRM IST</strong><br><small>CSE 2026</small></div>
+        </div>
       </div>
     </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <div class="scroll-arrow"></div>
+    </div>
   </section>
-  <!-- End Hero Section  -->
+  <!-- End Hero Section -->
 
-  <!-- Service Section -->
-  <section id="services">
-    <div class="services container">
-      <div class="service-top">
-        <h1 class="section-title">Pro<span>j</span>ets</h1>
-        <p>Mine Project Done during School level till undergraduate.
-        </p>
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-sub">What I Know</p>
+        <h2 class="section-title">My <span>Skills</span></h2>
       </div>
-      <div class="service-bottom">
-       
-        <div class="service-item">
-          <a href="https://docs.google.com/spreadsheets/d/1L56sYdXpzQWgfRoMB_CJsapY0dsVuvi4TFSXc6GEKTY/edit#gid=0" target="_blank">
-            <div class="icon"><img src="./img/rf.png" alt="RFID Icon"></div>
-            <h2>RFID ATTENDANCE</h2>
-            <p>
-              The RFID-based Attendance System revolutionizes tracking by integrating RFID tags for real-time attendance.
-              With scalability, enhanced security, and user-friendly interfaces, the central microprocessor automates attendance, ensuring efficiency.
-              It prioritizes privacy, data integrity, and sustainability, reducing paper waste and aligning with eco-friendly practices for a cost-effective solution.
-            </p>
-          </a>
+      <div class="skills-grid">
+        <!-- Tech Skills -->
+        <div class="skills-col reveal">
+          <h3 class="skills-col-title">Technical Skills</h3>
+          <div class="skill-item">
+            <div class="skill-header"><span>Java</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Python</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>C++</span><span>78%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>SQL</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>MongoDB</span><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>HTML / CSS</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
         </div>
-        
-        <div class="service-item">
-          <div class="icon"><img src="./img/py.png" /></div>
-          <h2>Student Management System (Python)</h2>
-          <p>Developed a Student Management System using Python's Tkinter and pymysql libraries, featuring a user-friendly interface for seamless addition, updating, deletion, and search functionalities of student records.
-             The system manages database connections, executes SQL queries, and presents data in a tabular format, ensuring efficient and error-free student data management in educational institutions.</p>
+        <!-- Tools & Soft Skills -->
+        <div class="skills-col reveal">
+          <h3 class="skills-col-title">Tools & Soft Skills</h3>
+          <div class="skill-item">
+            <div class="skill-header"><span>Power BI</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>AI / ML (TensorFlow, PyTorch)</span><span>72%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Git & GitHub</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Communication</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Problem Solving</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Team Collaboration</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
         </div>
-        <div class="service-item">
-          <div class="icon"><img src="./img/jv.png" /></div>
-          <h2>Electricity Billing System (JAVA)</h2>
-          <p>Designed and implemented an automated Electricity Billing System using Java Swing and Microsoft SQL Server.
-            This solution enhances accuracy and efficiency, allowing users to conveniently calculate and pay bills. 
-            The project showcases my proficiency in Java programming and database management for practical problem-solving in billing processes.
-          </p>
-        </div>
-        <div class="service-item">
-          <div class="icon"><img src="./img/car.png" /></div>
-          <h2>Car Rental Management System Using OODP Concept</h2>
-          <p>Implemented an efficient car rental system, streamlining the process for users and renters.
-             Utilized Object-Oriented Programming (OOP) concepts, including inheritance, abstraction, file handling, and encapsulation. 
-             Users can easily input data, rent a car, set deadlines, and determine prices through this system, optimizing the rental experience.</p>
-        </div>
-        <div class="service-item">
-          <div class="icon"><img src="./img/uni.png" /></div>
-          <h2>University Management System (JAVA)</h2>
-          <p> Java based Project that perform overall work of administrative. The task performed are managing the stdents, Publishing the result, Staff management,
-            Fee Management and various othe thing usnig JAVA  
-          </p>
-        </div>
-        <div class="service-item">
-          <a href="https://nepalsecondaryscho8.wixsite.com/website" target="_blank">
-            <div class="icon"><img src="./img/school.png" alt="School Icon"></div>
-            <h2>Web Site for a school</h2>
-            <p>Developed a school website with interactive features for students, providing login and signup options.
-               The platform enables users to upload and view results, fostering a seamless experience for my dad's school in my hometown, enhancing communication and accessibility for students. 
-            </p>
-          </a>
-        </div>
+      </div>
+      <!-- Tech Badges -->
+      <div class="tech-badges reveal">
+        <span class="badge">Java</span>
+        <span class="badge">Python</span>
+        <span class="badge">C++</span>
+        <span class="badge">SQL</span>
+        <span class="badge">MongoDB</span>
+        <span class="badge">Power BI</span>
+        <span class="badge">TensorFlow</span>
+        <span class="badge">OpenCV</span>
+        <span class="badge">HTML/CSS</span>
+        <span class="badge">Git</span>
+        <span class="badge">Linux</span>
+        <span class="badge">DCGAN</span>
       </div>
     </div>
   </section>
-  <!-- End Service Section -->
-  
+  <!-- End Skills Section -->
+
   <!-- Projects Section -->
-  <section id="projects">
-    <div class="projects container">
-      <div class="projects-header">
-        <h1 class="section-title">Recent <span>Achievement</span></h1>
+  <section id="services">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-sub">What I've Built</p>
+        <h2 class="section-title">My <span>Projects</span></h2>
       </div>
-      <div class="all-projects">
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Problem Solving Certification (Basic)</h1>
-            <h2>Coding is Love</h2>
-            <p>This my problem solving certification using c and c++ 
-              this helped me built confidence to go more ahead
-            </p>
+      <div class="projects-filter reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="java">Java</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="hardware">Hardware</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- MAJOR: Traffic Sign Recognition -->
+        <div class="project-card major reveal" data-category="ai">
+          <div class="project-card-badge in-progress">🔴 In Progress</div>
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #7c3aed, #2563eb);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><polygon points="12 2 22 20 2 20"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
-          <div class="project-img">
-            <img src="./img/pbasic.png" alt="img">
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Intermediate Problem Solving Certification</h1>
-            <h2>Lets to some more</h2>
-            <p>I did certification course in the hacker rank</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/pinter.png" alt="img">
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Java Certification</h1>
-            <h2>Coding is Love</h2>
-            <p>Again going for more builting intrest in coding i participated in the certification in java</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/java.png" alt="img">
+          <div class="project-card-body">
+            <span class="project-tag">AI · DCGAN · Computer Vision · MAJOR</span>
+            <h3>Traffic Sign Recognition using DSGAN</h3>
+            <p>Generative AI-Driven Adversarial Training for Robust Traffic Sign Recognition in Real-World Scenarios. Uses DCGANs to synthesize diverse traffic sign images to augment training data, improving CNN robustness in adverse weather, occlusion, and lighting conditions. Real-time detection pipeline included.</p>
+            <div class="project-tech-tags">
+              <span>Python</span><span>PyTorch</span><span>OpenCV</span><span>DCGAN</span><span>CNN</span>
+            </div>
           </div>
         </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Python Certification</h1>
-            <h2>Moving Forward</h2>
-            <p>Got Certified which made me more updated.</p>
+
+        <!-- ARM Processor Simulator (Samsung PRISM) -->
+        <div class="project-card reveal" data-category="ai">
+          <div class="project-card-badge samsung">⭐ Samsung PRISM</div>
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
           </div>
-          <div class="project-img">
-            <a href="https://www.hackerrank.com/certificates/5a998c12e390" target="_blank">
-              <img src="./img/pythonbasic.png" alt="Python Certification Image">
-            </a>
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Capacity Building Workshop</h1>
-            <h2>Apart from Computing </h2>
-            <p>I Participated in confidance building workshop
-              and self empowerment through the workshop.
-            </p>
-          </div>
-          <div class="project-img">
-            <img src="./img/workshop.png" alt="img">
+          <div class="project-card-body">
+            <span class="project-tag">C++ · Architecture Simulation · Research</span>
+            <h3>ARM Processor Power & Performance Simulator</h3>
+            <p>Developed under Samsung PRISM research program. A simulator for ARM processor architecture to model power consumption and performance metrics, enabling analysis of microarchitectural design choices, cache configurations, branch prediction strategies and clock performance under various workloads.</p>
+            <div class="project-tech-tags">
+              <span>C++</span><span>ARM ISA</span><span>Microarchitecture</span><span>Samsung PRISM</span>
+            </div>
           </div>
         </div>
+
+        <!-- Pneumonia Detection -->
+        <div class="project-card reveal" data-category="ai">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #ef4444, #f97316);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">AI · Medical Imaging · CNN</span>
+            <h3>Pneumonia Detection using X-Ray</h3>
+            <p>Trained a deep Convolutional Neural Network (CNN) on chest X-ray images to automatically detect pneumonia. Achieved high accuracy using transfer learning (VGG/ResNet), with GradCAM heatmap visualization to highlight infected lung regions, assisting radiologists in faster diagnosis.</p>
+            <div class="project-tech-tags">
+              <span>Python</span><span>TensorFlow</span><span>CNN</span><span>OpenCV</span><span>GradCAM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kishan Mart -->
+        <div class="project-card reveal" data-category="web">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #16a34a, #65a30d);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Web · E-Commerce · Agriculture</span>
+            <h3>Kishan Mart</h3>
+            <p>A digital marketplace for farmers to directly sell agricultural produce to consumers and retailers, eliminating middlemen. Features include crop listings, price discovery, order management, and farmer profiles. Built to bridge the rural-digital divide for Indian farmers.</p>
+            <div class="project-tech-tags">
+              <span>HTML/CSS</span><span>JavaScript</span><span>MongoDB</span><span>Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RFID Attendance -->
+        <div class="project-card reveal" data-category="hardware">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">IoT · Hardware · NodeMCU</span>
+            <h3>RFID-Based Attendance System</h3>
+            <p class="project-desc" data-project="rfid">Revolutionizes attendance tracking by integrating RFID tags with a NodeMCU microcontroller. Features real-time attendance updates to Google Sheets via WiFi, scalable for multiple classrooms, enhanced security, and automated reporting — reducing paper waste significantly.</p>
+            <div class="project-tech-tags">
+              <span>NodeMCU</span><span>RFID</span><span>Arduino</span><span>Google Sheets API</span>
+            </div>
+            <a href="https://docs.google.com/spreadsheets/d/1L56sYdXpzQWgfRoMB_CJsapY0dsVuvi4TFSXc6GEKTY/edit#gid=0" target="_blank" class="project-link">View Live Sheet →</a>
+          </div>
+        </div>
+
+        <!-- Student Management System -->
+        <div class="project-card reveal" data-category="java">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Python · GUI · Database</span>
+            <h3>Student Management System</h3>
+            <p>Desktop application built with Python Tkinter and PyMySQL. Provides a user-friendly GUI for seamless addition, updating, deletion, and search of student records. Tabular data display with efficient SQL query handling for educational institutions.</p>
+            <div class="project-tech-tags">
+              <span>Python</span><span>Tkinter</span><span>MySQL</span><span>SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Electricity Billing -->
+        <div class="project-card reveal" data-category="java">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Java · Swing · SQL Server</span>
+            <h3>Electricity Billing System</h3>
+            <p>Automated billing solution using Java Swing and Microsoft SQL Server. Allows users to calculate and pay electricity bills with real-time unit calculation, bill generation and payment history tracking. Showcases proficiency in Java OOP and JDBC database connectivity.</p>
+            <div class="project-tech-tags">
+              <span>Java</span><span>Swing</span><span>SQL Server</span><span>JDBC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- University Management System -->
+        <div class="project-card reveal" data-category="java">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #0891b2, #0e7490);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Java · OOP · Management</span>
+            <h3>University Management System</h3>
+            <p>A comprehensive Java-based system handling all university administrative functions — student records, result publication, staff management, fee management and report generation, built with clean OOP architecture using inheritance, abstraction and encapsulation.</p>
+            <div class="project-tech-tags">
+              <span>Java</span><span>OOP</span><span>MySQL</span><span>Swing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car Rental -->
+        <div class="project-card reveal" data-category="java">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #64748b, #475569);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">C++ · OOP · File Handling</span>
+            <h3>Car Rental Management System</h3>
+            <p>C++ implementation of a car rental system using OOP concepts including inheritance, encapsulation, abstraction and file handling. Users can rent vehicles, set deadlines, calculate pricing and manage rental transactions through an interactive CLI.</p>
+            <div class="project-tech-tags">
+              <span>C++</span><span>OOP</span><span>File I/O</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- School Website -->
+        <div class="project-card reveal" data-category="web">
+          <div class="project-card-icon" style="background: linear-gradient(135deg, #84cc16, #4d7c0f);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="project-card-body">
+            <span class="project-tag">Web · Wix · Education</span>
+            <h3>School Website</h3>
+            <p>Developed a complete school website with student login/signup, result upload and viewing features for my hometown school in Nepal. Provides seamless digital communication between school administration, teachers and students.</p>
+            <div class="project-tech-tags">
+              <span>Wix</span><span>Web Design</span><span>UX</span>
+            </div>
+            <a href="https://nepalsecondaryscho8.wixsite.com/website" target="_blank" class="project-link">Visit Site →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
   <!-- End Projects Section -->
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="about container">
-      <div class="col-left">
-        <div class="about-img">
-          <img src="./img/img-2.png" alt="img">
+  <!-- Achievements Section -->
+  <section id="achievements">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-sub">Milestones</p>
+        <h2 class="section-title">Certifications &amp; <span>Achievements</span></h2>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🥇</div>
+          <div class="achievement-body">
+            <h3>Problem Solving — Basic</h3>
+            <p>HackerRank certified in Problem Solving (C / C++). Foundation for algorithmic thinking and competitive programming.</p>
+            <div class="achievement-img"><img src="./img/pbasic.png" alt="Problem Solving Basic Certificate"></div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🥈</div>
+          <div class="achievement-body">
+            <h3>Problem Solving — Intermediate</h3>
+            <p>HackerRank Intermediate level certification, demonstrating advanced algorithmic skills and data structure mastery.</p>
+            <div class="achievement-img"><img src="./img/pinter.png" alt="Problem Solving Intermediate Certificate"></div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">☕</div>
+          <div class="achievement-body">
+            <h3>Java Certification</h3>
+            <p>HackerRank Java Certification demonstrating proficiency in core Java concepts, OOP and collections framework.</p>
+            <div class="achievement-img"><img src="./img/java.png" alt="Java Certificate"></div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🐍</div>
+          <div class="achievement-body">
+            <h3>Python — Basic Certification</h3>
+            <p>HackerRank Python Basic Certification, showcasing Python scripting, functions and data manipulation skills.</p>
+            <a href="https://www.hackerrank.com/certificates/5a998c12e390" target="_blank" class="achievement-link">View Certificate →</a>
+            <div class="achievement-img"><img src="./img/pythonbasic.png" alt="Python Basic Certificate"></div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">💡</div>
+          <div class="achievement-body">
+            <h3>Capacity Building Workshop</h3>
+            <p>Participated in a confidence and self-empowerment workshop, honing leadership, communication and personal development skills beyond academics.</p>
+            <div class="achievement-img"><img src="./img/workshop.png" alt="Workshop Certificate"></div>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">⭐</div>
+          <div class="achievement-body">
+            <h3>Samsung PRISM Research Program</h3>
+            <p>Selected for Samsung PRISM (Pro-active Industry-ready Student Mentoring) program to work on ARM Processor Power &amp; Performance Simulator under mentorship of Samsung engineers.</p>
+          </div>
         </div>
       </div>
-      <div class="col-right">
-        <h1 class="section-title">About <span>me</span></h1>
-        <h2>Computer Science Engineer</h2>
-        <p>
-          I am Siddhartha, a computer science student with a fervent interest in coding.
-           Experienced in diverse projects such asElectricity Billing System (Java), and Student Management System (Python), RFID-NodeMcu Based Attendance System. Currently Working under Samsung Prism Project.
-           Certified in problem-solving with C++, Java,HTML,CSS , UI/UX and Python, I am dedicated to advancing my skills in the ever-evolving field of computer science. 
-           Passionate about contributing to technological innovations.
-        </p>
-        <a href="https://sp7479.hackerresume.io/2647c6d1-167b-4947-8905-3da6baffc3a3" class="cta" target="_blank">Download Resume</a>
+    </div>
+  </section>
+  <!-- End Achievements Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-container">
+      <div class="about-wrapper">
+        <div class="about-img-col reveal">
+          <div class="about-img-frame">
+            <img src="./img/img-2.png" alt="Siddhartha Patel" id="about-photo">
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <h3 id="stat-projects">10+</h3>
+              <p>Projects</p>
+            </div>
+            <div class="stat-item">
+              <h3 id="stat-certs">5+</h3>
+              <p>Certifications</p>
+            </div>
+            <div class="stat-item">
+              <h3 id="stat-exp">1+</h3>
+              <p>Research Year</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col reveal">
+          <p class="section-sub">Who I Am</p>
+          <h2 class="section-title text-left">About <span>Me</span></h2>
+          <p class="about-para" id="about-text">
+            I am <strong>Siddhartha Patel</strong>, a passionate Computer Science Engineering student at SRM Institute of Science and Technology (SRM IST), graduating in <strong>May 2026</strong>. I have a deep interest in AI/ML, system-level programming, and building impactful tech solutions.
+          </p>
+          <p class="about-para">
+            Currently working on my major project — a <strong>Traffic Sign Recognition system using DSGAN</strong> for robust real-world training. I've also contributed research as part of the <strong>Samsung PRISM</strong> program, building an ARM Processor Power &amp; Performance Simulator.
+          </p>
+          <p class="about-para">
+            Beyond technical skills, I pride myself on strong <strong>communication skills</strong>, the ability to collaborate in diverse teams, and a relentless drive to learn and grow. I am fluent in both technical discussions and stakeholder communication.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item"><span class="info-label">Name</span><span id="ai-name">Siddhartha Patel</span></div>
+            <div class="info-item"><span class="info-label">University</span><span>SRM IST, Chennai</span></div>
+            <div class="info-item"><span class="info-label">Branch</span><span>B.Tech CSE</span></div>
+            <div class="info-item"><span class="info-label">Graduating</span><span>May 2026</span></div>
+            <div class="info-item"><span class="info-label">GitHub</span><span><a href="https://github.com/SidL340/" target="_blank">SidL340</a></span></div>
+            <div class="info-item"><span class="info-label">Phone</span><span>+91 7871299564</span></div>
+          </div>
+          <a href="./img/Resume.pdf" class="btn btn-primary" target="_blank" download>Download CV</a>
+        </div>
       </div>
     </div>
   </section>
   <!-- End About Section -->
 
+  <!-- Education Section -->
+  <section id="education">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-sub">My Academic Journey</p>
+        <h2 class="section-title">Edu<span>cation</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 – 2026</span>
+            <h3>B.Tech in Computer Science Engineering</h3>
+            <h4>SRM Institute of Science and Technology (SRM IST), Chennai</h4>
+            <p>Specializing in AI/ML and system-level programming. Active member of tech communities, Samsung PRISM researcher, and passionate about open-source contributions. Expected graduation: <strong>May 2026</strong>.</p>
+            <div class="timeline-tags"><span>CSE</span><span>AI/ML</span><span>Research</span></div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Until 2022</span>
+            <h3>Higher Secondary Education (Class XII)</h3>
+            <h4>Nepal</h4>
+            <p>Completed higher secondary education with science stream, building a strong foundation in mathematics, physics and computer science before joining SRM IST.</p>
+            <div class="timeline-tags"><span>Science</span><span>Mathematics</span><span>Physics</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Education Section -->
+
   <!-- Contact Section -->
   <section id="contact">
-    <div class="contact container">
-      <div>
-        <h1 class="section-title">Contact <span>info</span></h1>
+    <div class="section-container">
+      <div class="section-header reveal">
+        <p class="section-sub">Get In Touch</p>
+        <h2 class="section-title">Contact <span>Me</span></h2>
       </div>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="icon"><img src="./img/call.png" /></div>
-          <div class="contact-info">
-            <h1>Phone</h1>
-            <h2>+917871299564</h2>
-            <h2>+9779812225102</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info-col reveal">
+          <div class="contact-card">
+            <div class="contact-card-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 7871299564</p>
+              <p>+977 9812225102</p>
+            </div>
+          </div>
+          <div class="contact-card clickable" onclick="window.open('https://linkedin.com/in/siddhartha-patel-2b41b3281/', '_blank')">
+            <div class="contact-card-icon">💼</div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p>siddhartha-patel-2b41b3281</p>
+            </div>
+          </div>
+          <div class="contact-card clickable" onclick="window.open('https://github.com/SidL340/', '_blank')">
+            <div class="contact-card-icon">🐙</div>
+            <div>
+              <h4>GitHub</h4>
+              <p>github.com/SidL340</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <h4>Address</h4>
+              <p>Brindaban, Rautahat Madhesh, Nepal</p>
+            </div>
           </div>
         </div>
-        <div class="contact-item" onclick="redirectToLinkedIn()">
-          <div class="icon"><img src="./img/link.png" alt="LinkedIn Icon"></div>
-          <div class="contact-info">
-            <h1>linkedin</h1>
-          </div>
-        </div>
-        
-        <script>
-          // JavaScript function to open the LinkedIn profile in a new tab
-          function redirectToLinkedIn() {
-            // Replace 'https://linkedin.com/in/siddhartha-patel-2b41b3281/' with the actual LinkedIn profile URL
-            window.open('https://linkedin.com/in/siddhartha-patel-2b41b3281/', '_blank');
-          }
-        </script>
-        
-        <div class="contact-item" onclick="redirectToGitHub()">
-          <div class="icon"><img src="./img/git.png" alt="GitHub Icon"></div>
-          <div class="contact-info">
-            <h1>GitHub</h1>
-          </div>
-        </div>
-        
-        <script>
-          // JavaScript function to open the GitHub profile in a new tab
-          function redirectToGitHub() {
-            // Replace 'https://github.com/SidL340/' with the actual GitHub profile URL
-            window.open('https://github.com/SidL340/', '_blank');
-          }
-        </script>
-        <div class="contact-item">
-          <div class="icon"><img src="./img/address.png" /></div>
-          <div class="contact-info">
-            <h1>Address</h1>
-            <h2>Brindaban , Rautahat Madhesh Nepal</h2>
-          </div>
+        <div class="contact-form-col reveal">
+          <form class="contact-form" id="contact-form" onsubmit="handleContact(event)">
+            <h3>Send a Message</h3>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="cf-name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" id="cf-email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="cf-message" rows="5" placeholder="Let's collaborate..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message 🚀</button>
+            <div id="cf-msg" class="form-msg"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -262,39 +566,38 @@
   <!-- End Contact Section -->
 
   <!-- Footer -->
-  <section id="footer">
-    <div class="footer container">
-      <div class="brand">
-        <h1><span>S</span>iddhartha <span>p</span>atel</h1>
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero"><span>S</span>iddhartha <span>P</span>atel</a>
       </div>
-      <h2>!!!!Thanks for visiting!!!!</h2>
-      <div class="social-icon">
-        <div class="social-item" onclick="openInNewTab('https://www.facebook.com/Siddharthapatel110patelsiddhu/')">
-          <a href="#"><img src="./img/facebook.png" alt="Facebook Icon"></a>
-        </div>
-        <div class="social-item" onclick="openInNewTab('https://www.instagram.com/cdart_raut/')">
-          <a href="#"><img src="./img/insta.png" alt="Instagram Icon"></a>
-        </div>
-        <div class="social-item" onclick="openInNewTab('https://github.com/SidL340/')">
-          <a href="#"><img src="./img/git.png" alt="GitHub Icon"></a>
-        </div>
-        <div class="social-item" onclick="openInNewTab('https://linkedin.com/in/siddhartha-patel-2b41b3281/')">
-          <a href="#"><img src="./img/link.png" alt="LinkedIn Icon"></a>
-        </div>
+      <p class="footer-tagline">Building the future, one project at a time 🚀</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/Siddharthapatel110patelsiddhu/" target="_blank" title="Facebook">
+          <img src="./img/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/cdart_raut/" target="_blank" title="Instagram">
+          <img src="./img/insta.png" alt="Instagram">
+        </a>
+        <a href="https://github.com/SidL340/" target="_blank" title="GitHub">
+          <img src="./img/git.png" alt="GitHub">
+        </a>
+        <a href="https://linkedin.com/in/siddhartha-patel-2b41b3281/" target="_blank" title="LinkedIn">
+          <img src="./img/link.png" alt="LinkedIn">
+        </a>
       </div>
-      
-      <script>
-        // JavaScript function to open a link in a new tab
-        function openInNewTab(url) {
-          window.open(url, '_blank');
-        }
-      </script>
-      
-      <p>Copyright © 2024 siddhartha. All rights reserved</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Projects</a>
+        <a href="#about">About</a>
+        <a href="login.html">Admin</a>
+      </div>
+      <p class="footer-copy">Copyright &copy; 2026 Siddhartha Patel. All rights reserved.</p>
     </div>
-  </section>
+  </footer>
   <!-- End Footer -->
-  <script src="./app.js"></script>
-</body>
 
+  <script src="app.js"></script>
+</body>
 </html>
