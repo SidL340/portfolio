@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "name": "siddhartha-patel-portfolio",
+  "name": "portfolio",
+  "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
