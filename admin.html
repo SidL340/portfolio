@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="admin.css">
   <script>
     // Authentication Guard
-    if (sessionStorage.getItem('admin_authenticated') !== 'true') {
+    if (sessionStorage.getItem('portfolio_admin_auth') !== 'true') {
       window.location.href = 'login.html';
     }
   </script>
@@ -23,16 +23,16 @@
       </div>
 
       <nav class="admin-nav">
-        <button class="admin-nav-item active" onclick="switchTab('tab-hero')">
+        <button class="admin-nav-item active" onclick="switchTab('tab-hero', event)">
           <span>👤</span> Hero &amp; Bio
         </button>
-        <button class="admin-nav-item" onclick="switchTab('tab-projects')">
+        <button class="admin-nav-item" onclick="switchTab('tab-projects', event)">
           <span>🚀</span> Projects CMS
         </button>
-        <button class="admin-nav-item" onclick="switchTab('tab-certs')">
+        <button class="admin-nav-item" onclick="switchTab('tab-certs', event)">
           <span>📜</span> Certificates CMS
         </button>
-        <button class="admin-nav-item" onclick="switchTab('tab-system')">
+        <button class="admin-nav-item" onclick="switchTab('tab-system', event)">
           <span>⚙️</span> System &amp; Reset
         </button>
       </nav>
@@ -56,7 +56,7 @@
           <p style="color: var(--text-muted); font-size: 0.9rem;">Manage all live website content for <strong>siddharthapatel.com.np</strong></p>
         </div>
         <div class="admin-user-pill">
-          ● Authenticated as siddharthapatel110@gmail.com
+          ● Authenticated Admin
         </div>
       </div>
 
@@ -191,19 +191,23 @@
                 <input type="text" id="nc-issuer" class="form-control" required placeholder="e.g. HackerRank / Coursera">
               </div>
             </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+              <div class="form-group">
+                <label>Category</label>
+                <select id="nc-category" class="form-control" required style="background: rgba(7,9,14,0.9); color: #fff;">
+                  <option value="ai">AI, Cloud &amp; ML</option>
+                  <option value="dev">Software &amp; Web Dev</option>
+                  <option value="hackathon">Hackathons &amp; Internships</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Drive / Verification PDF Link URL</label>
+                <input type="text" id="nc-link" class="form-control" placeholder="https://drive.google.com/...">
+              </div>
+            </div>
             <div class="form-group">
               <label>Certificate Description</label>
               <textarea id="nc-desc" class="form-control" rows="2" required placeholder="Key skills demonstrated..."></textarea>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-              <div class="form-group">
-                <label>Image Preview Path / URL</label>
-                <input type="text" id="nc-img" class="form-control" placeholder="./img/pbasic.png">
-              </div>
-              <div class="form-group">
-                <label>Verification Link URL</label>
-                <input type="text" id="nc-link" class="form-control" placeholder="https://hackerrank.com/certificates/...">
-              </div>
             </div>
             <button type="submit" class="btn btn-primary">
               <span>Add Certificate</span>
@@ -218,6 +222,7 @@
               <tr>
                 <th>Title</th>
                 <th>Issuer</th>
+                <th>Category</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -252,19 +257,20 @@
   <script src="app.js"></script>
   <script>
     // Tab Switching Logic
-    function switchTab(tabId) {
+    function switchTab(tabId, evt) {
       document.querySelectorAll('.admin-tab-content').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.admin-nav-item').forEach(el => el.classList.remove('active'));
 
       const target = document.getElementById(tabId);
       if (target) target.style.display = 'block';
 
-      event.currentTarget.classList.add('active');
+      if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+      }
     }
 
     function handleLogout() {
-      sessionStorage.removeItem('admin_authenticated');
-      sessionStorage.removeItem('admin_user');
+      sessionStorage.removeItem('portfolio_admin_auth');
       window.location.href = 'login.html';
     }
 
@@ -339,8 +345,8 @@
         id: 'cert-' + Date.now(),
         title: document.getElementById('nc-title').value,
         issuer: document.getElementById('nc-issuer').value,
+        category: document.getElementById('nc-category').value,
         desc: document.getElementById('nc-desc').value,
-        img: document.getElementById('nc-img').value,
         link: document.getElementById('nc-link').value
       };
 
@@ -380,6 +386,7 @@
           <tr>
             <td><strong>${c.title}</strong></td>
             <td>${c.issuer}</td>
+            <td><span class="proj-tag">${c.category || 'all'}</span></td>
             <td>
               <button onclick="deleteCertificate('${c.id}')" class="btn-danger">Delete</button>
             </td>

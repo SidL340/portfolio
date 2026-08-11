@@ -156,52 +156,184 @@ const DEFAULT_CMS_DATA = {
   ],
   certificates: [
     {
-      id: "cert-pbasic",
-      title: "Problem Solving (Basic)",
-      issuer: "HackerRank Certified",
-      desc: "Validates foundational problem solving, data structures, and algorithmic mastery in C / C++.",
-      img: "./img/pbasic.png",
-      link: "https://www.hackerrank.com/certificates/"
+      id: "c1",
+      title: "AWS Cloud Certification",
+      issuer: "Amazon Web Services (AWS)",
+      category: "ai",
+      desc: "Certified in AWS cloud infrastructure, EC2 virtual servers, S3 storage, IAM security, and cloud architectural best practices.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
     },
     {
-      id: "cert-pinter",
+      id: "c2",
+      title: "Python for Data Science, AI & Development",
+      issuer: "IBM / Coursera Certified",
+      category: "ai",
+      desc: "Comprehensive certification covering Python data analysis, NumPy, Pandas, REST APIs, Web Scraping, and AI model workflows.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c3",
+      title: "Mastering Machine Learning: From Basic to Breakthrough",
+      issuer: "AI & ML Specialist Program",
+      category: "ai",
+      desc: "Advanced machine learning credential covering supervised/unsupervised algorithms, neural networks, feature engineering, and model evaluation.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c4",
+      title: "Backend Web Development (Express & Node.js)",
+      issuer: "Full-Stack Web Architecture",
+      category: "dev",
+      desc: "Mastery in asynchronous JavaScript, Node.js runtime, Express routing, REST API design, middleware authorization, and database integration.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c5",
+      title: "Database Management System (DBMS)",
+      issuer: "Database Engineering & SQL",
+      category: "dev",
+      desc: "Certified in relational database design, E-R modeling, SQL query optimization, ACID transactions, normalization, and indexing.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c6",
+      title: "Software Engineer Intern Certification",
+      issuer: "HackerRank Verified",
+      category: "dev",
+      desc: "Standardized technical assessment validating object-oriented programming, data structures, algorithm efficiency, and problem solving.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c7",
       title: "Problem Solving (Intermediate)",
       issuer: "HackerRank Certified",
-      desc: "Demonstrates advanced data structure techniques, dynamic programming, graph traversal, and complex algorithms.",
+      category: "dev",
+      desc: "Demonstrates advanced data structure techniques, dynamic programming, graph traversal algorithms, and complexity minimization.",
       img: "./img/pinter.png",
-      link: "https://www.hackerrank.com/certificates/"
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
     },
     {
-      id: "cert-java",
-      title: "Java Certification",
+      id: "c8",
+      title: "Problem Solving (Basic)",
       issuer: "HackerRank Certified",
-      desc: "Certified in core Java concepts, object-oriented design, multi-threading, exceptions, and collections framework.",
-      img: "./img/java.png",
-      link: "https://www.hackerrank.com/certificates/"
+      category: "dev",
+      desc: "Validates foundational problem solving, array manipulation, string algorithms, and logical reasoning in C / C++.",
+      img: "./img/pbasic.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
     },
     {
-      id: "cert-python",
+      id: "c9",
+      title: "Java Developer Certification",
+      issuer: "HackerRank Certified",
+      category: "dev",
+      desc: "Certified in core Java language fundamentals, object-oriented concepts, multithreading, exception handling, and collections framework.",
+      img: "./img/java.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c10",
       title: "Python (Basic) Certification",
       issuer: "HackerRank Certified",
-      desc: "Verified proficiency in Python scripting, functional programming, data structures, and string manipulation.",
+      desc: "Verified proficiency in Python scripting, functional programming, built-in data structures, and algorithmic execution.",
       img: "./img/pythonbasic.png",
-      link: "https://www.hackerrank.com/certificates/5a998c12e390"
+      category: "dev",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
     },
     {
-      id: "cert-workshop",
-      title: "Capacity Building Workshop",
-      issuer: "Leadership & Skill Development",
-      desc: "Completed intensive workshop focusing on self-empowerment, leadership dynamics, team communication, and strategic problem solving.",
-      img: "./img/workshop.png",
-      link: ""
-    },
-    {
-      id: "cert-samsung",
-      title: "Samsung PRISM Research Selection",
-      issuer: "Samsung R&D Institute India",
-      desc: "Selected as an official student researcher under the Samsung PRISM program for ARM Processor Architecture Simulation.",
+      id: "c11",
+      title: "The Web Developer Bootcamp",
+      issuer: "Udemy Certified",
+      category: "dev",
+      desc: "Full-stack web developer certification covering modern HTML5, CSS3, JavaScript ES6+, DOM manipulation, RESTful APIs, and MongoDB.",
       img: "./img/img-2.png",
-      link: ""
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c12",
+      title: "Interactive Computer Graphics",
+      issuer: "SRM IST Course Certification",
+      category: "ai",
+      desc: "Academic certification in 2D/3D transformation matrix calculations, rendering pipelines, OpenGL, ray tracing, and shader programming.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c13",
+      title: "Prodigy InfoTech Software Engineering Internship",
+      issuer: "Prodigy InfoTech",
+      category: "hackathon",
+      desc: "Completed software engineering internship working on interactive applications, modular code development, and real-world software delivery.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
+    },
+    {
+      id: "c14",
+      title: "TATA Virtual Internship Experience",
+      issuer: "TATA Group / Forage",
+      category: "hackathon",
+      desc: "Completed virtual work experience simulation with TATA, solving enterprise technology scenarios, data analysis, and solution architecture.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
+    },
+    {
+      id: "c15",
+      title: "Flipkart Grid Competition Certificate",
+      issuer: "Flipkart Engineering",
+      category: "hackathon",
+      desc: "Participated in national level Flipkart Grid engineering challenge, competing in complex algorithmic and e-commerce scale problem scenarios.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
+    },
+    {
+      id: "c16",
+      title: "Hack2skill National Hackathon",
+      issuer: "Hack2skill Community",
+      category: "hackathon",
+      desc: "Recognized participant in Hack2skill national hackathon, developing innovative tech solutions within strict 24-48 hour sprint timelines.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
+    },
+    {
+      id: "c17",
+      title: "CISCO Networking Basics",
+      issuer: "CISCO Networking Academy",
+      category: "hackathon",
+      desc: "Certified in fundamental computer networking concepts, OSI model layers, IP addressing, TCP/UDP protocols, and network security basics.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c18",
+      title: "Advanced Cyber & Data Security (ACDS)",
+      issuer: "ACDS Certification",
+      category: "hackathon",
+      desc: "Certified in cybersecurity principles, network vulnerability scanning, data encryption standards, and threat prevention strategies.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
+    },
+    {
+      id: "c19",
+      title: "Wireless Communication for Everybody",
+      issuer: "Coursera Certified",
+      category: "ai",
+      desc: "Covered mobile communication standards, cellular network architecture, wireless signal propagation, and modern IoT protocols.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link"
+    },
+    {
+      id: "c20",
+      title: "International Book of Records Honor",
+      issuer: "International Record Holder 2024",
+      category: "hackathon",
+      desc: "Honored in the International Book of Records 2024 for outstanding technical achievements and academic record excellence.",
+      img: "./img/img-2.png",
+      link: "https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link"
     }
   ],
   gallery: [
@@ -261,8 +393,14 @@ function loadCmsData() {
     }
   }
 
+  // Render Stats Dynamic Numbers
+  const certCountVal = document.getElementById('stat-certs-val');
+  if (certCountVal && currentCmsData.certificates) {
+    certCountVal.textContent = currentCmsData.certificates.length + '+';
+  }
+
   renderProjects('all', '');
-  renderCertificates();
+  renderCertificates('all');
   renderGallery();
 }
 
@@ -333,28 +471,29 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
   `).join('');
 }
 
-function renderCertificates() {
+function renderCertificates(filterCategory = 'all') {
   const container = document.getElementById('certs-grid');
   if (!container || !currentCmsData || !currentCmsData.certificates) return;
 
-  container.innerHTML = currentCmsData.certificates.map(c => `
-    <div class="cert-card reveal visible" onclick="openLightboxModal('${c.img}', '${c.title} — ${c.issuer}')">
-      <div class="cert-header">
-        <div class="cert-icon">📜</div>
-        <div>
-          <h3 class="cert-title">${c.title}</h3>
-          <div class="cert-issuer">${c.issuer}</div>
-        </div>
-      </div>
-      <p class="cert-desc">${c.desc}</p>
-      ${c.img ? `
-        <div class="cert-img-preview">
-          <img src="${c.img}" alt="${c.title}">
-          <div class="cert-zoom-overlay">
-            <span>🔍 Click to View Full Certificate</span>
+  const certs = currentCmsData.certificates;
+  const filtered = certs.filter(c => filterCategory === 'all' || (c.category && c.category === filterCategory));
+
+  container.innerHTML = filtered.map(c => `
+    <div class="cert-card reveal visible">
+      <div>
+        <div class="cert-header">
+          <div class="cert-icon">📜</div>
+          <div>
+            <h3 class="cert-title">${c.title}</h3>
+            <div class="cert-issuer">${c.issuer}</div>
           </div>
         </div>
-      ` : ''}
+        <p class="cert-desc">${c.desc}</p>
+      </div>
+
+      <a href="${c.link || 'https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr'}" target="_blank" class="cert-action-btn">
+        <span>📄 Open Official Certificate PDF</span> &#8599;
+      </a>
     </div>
   `).join('');
 }
@@ -617,6 +756,16 @@ document.addEventListener('DOMContentLoaded', () => {
       pill.classList.add('active');
       const searchVal = searchInput ? searchInput.value : '';
       renderProjects(pill.dataset.filter, searchVal);
+    });
+  });
+
+  // Certificate Sub-Category Filter Event Listeners
+  const certPills = document.querySelectorAll('.cert-filter-pill');
+  certPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      certPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      renderCertificates(pill.dataset.certFilter);
     });
   });
 });

@@ -33,6 +33,10 @@
   <div id="cursor-dot"></div>
   <div id="cursor-blur"></div>
 
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
   <!-- Particles Canvas Container -->
   <div id="particles-container"></div>
 
@@ -152,8 +156,8 @@
             <div class="stat-label">Projects Built</div>
           </div>
           <div class="stat-box">
-            <div class="stat-number" id="stat-certs-val">5+</div>
-            <div class="stat-label">Certifications</div>
+            <div class="stat-number" id="stat-certs-val">20+</div>
+            <div class="stat-label">Verified Certifications</div>
           </div>
           <div class="stat-box">
             <div class="stat-number" id="stat-research-val">1+</div>
@@ -347,12 +351,30 @@
     <section id="certificates">
       <div class="section-container">
         <div class="section-header reveal">
-          <p class="section-sub">Honors &amp; Credentials</p>
+          <p class="section-sub">Honors &amp; Verified Credentials</p>
           <h2 class="section-title">Certifications &amp; <span>Achievements</span></h2>
         </div>
 
+        <!-- Certificate Sub-Category Filter Bar -->
+        <div class="certs-filter-bar reveal">
+          <button class="cert-filter-pill filter-pill active" data-cert-filter="all">All Credentials (20+)</button>
+          <button class="cert-filter-pill filter-pill" data-cert-filter="ai">AI, Cloud &amp; ML</button>
+          <button class="cert-filter-pill filter-pill" data-cert-filter="dev">Software &amp; Web Dev</button>
+          <button class="cert-filter-pill filter-pill" data-cert-filter="hackathon">Hackathons &amp; Internships</button>
+        </div>
+
+        <!-- Direct Drive Folders CTA -->
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2.5rem; flex-wrap: wrap;" class="reveal">
+          <a href="https://drive.google.com/drive/folders/1x2t4x9u95X3IypPhBlcw5uS5OoEx21Dr?usp=drive_link" target="_blank" class="btn btn-secondary" style="border-radius: 30px; font-size: 0.88rem;">
+            <span>📁 Open Course Certificates Drive Folder</span> &#8599;
+          </a>
+          <a href="https://drive.google.com/drive/folders/1jz4GFvUQ0GKL1gTCiQ6uZ_LnFS6aMQYz?usp=drive_link" target="_blank" class="btn btn-secondary" style="border-radius: 30px; font-size: 0.88rem;">
+            <span>📁 Open Hackathons &amp; Internships Drive Folder</span> &#8599;
+          </a>
+        </div>
+
         <div class="achievements-grid" id="certs-grid">
-          <!-- Dynamically Rendered via app.js with Lightbox Trigger -->
+          <!-- Dynamically Rendered via app.js -->
         </div>
       </div>
     </section>
