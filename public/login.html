@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Siddhartha Patel Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-dark);
+      position: relative;
+    }
+    .login-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      z-index: 10;
+    }
+    .login-brand {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .login-brand h2 {
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+    }
+    .login-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .pwd-wrap {
+      position: relative;
+    }
+    .pwd-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+    .back-home:hover {
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-container"></div>
+
+  <div class="login-card">
+    <div class="login-brand">
+      <h2>Sid<span class="gradient-text">.</span> CMS Login</h2>
+      <p>Secure Portal for Siddhartha Patel Portfolio</p>
+    </div>
+
+    <form id="login-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="admin-email">Admin Email Address</label>
+        <input type="email" id="admin-email" class="form-control" placeholder="siddharthapatel110@gmail.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="admin-password">Password</label>
+        <div class="pwd-wrap">
+          <input type="password" id="admin-password" class="form-control" placeholder="••••••••••••" required>
+          <button type="button" class="pwd-toggle" onclick="togglePasswordVisibility()">Show</button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+        <span>Authenticate &amp; Enter CMS</span> &rarr;
+      </button>
+
+      <div id="login-error" class="form-response-msg error" style="margin-top: 1.25rem; text-align: center;"></div>
+    </form>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-home">&larr; Return to Public Website</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('admin-password');
+      const toggleBtn = document.querySelector('.pwd-toggle');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        toggleBtn.textContent = 'Hide';
+      } else {
+        pwdInput.type = 'password';
+        toggleBtn.textContent = 'Show';
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('admin-email').value.trim();
+      const password = document.getElementById('admin-password').value.trim();
+      const errorMsg = document.getElementById('login-error');
+
+      // Credentials set by Siddhartha Patel:
+      // Email: siddharthapatel110@gmail.com
+      // Password: #%Gautam9845
+      if (email === 'siddharthapatel110@gmail.com' && password === '#%Gautam9845') {
+        sessionStorage.setItem('admin_authenticated', 'true');
+        sessionStorage.setItem('admin_user', email);
+        errorMsg.style.display = 'none';
+        window.location.href = 'admin.html';
+      } else {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = '❌ Access Denied: Invalid Email Address or Password.';
+      }
+    }
+
+    // Particle effect script
+    (function initParticles() {
+      const container = document.getElementById('particles-container');
+      if (!container) return;
+      for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.style.cssText = `
+          position: absolute;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          width: ${Math.random() * 3 + 1}px;
+          height: ${Math.random() * 3 + 1}px;
+          background: var(--accent-cyan);
+          border-radius: 50%;
+          opacity: ${Math.random() * 0.3 + 0.1};
+        `;
+        container.appendChild(p);
+      }
+    })();
+  </script>
+</body>
+</html>
