@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login | Siddhartha Patel Portfolio</title>
+  <title>Admin Portal Login | Siddhartha Patel Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -11,100 +11,146 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--bg-dark);
-      position: relative;
+      background: #090d16;
+      padding: 1.5rem;
     }
     .login-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-lg);
-      padding: 3rem 2.5rem;
       width: 100%;
       max-width: 440px;
-      backdrop-filter: blur(20px);
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      z-index: 10;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 242, 254, 0.15);
+      text-align: center;
     }
     .login-brand {
-      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .login-brand span { color: var(--accent-cyan); }
+    .login-sub {
+      color: var(--text-dim);
+      font-size: 0.95rem;
       margin-bottom: 2rem;
     }
-    .login-brand h2 {
-      font-size: 2rem;
-      margin-bottom: 0.4rem;
+    .form-group {
+      text-align: left;
+      margin-bottom: 1.5rem;
     }
-    .login-brand p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
     }
-    .pwd-wrap {
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .pwd-wrapper {
       position: relative;
     }
     .pwd-toggle {
       position: absolute;
-      right: 1rem;
+      right: 12px;
       top: 50%;
       transform: translateY(-50%);
       background: none;
       border: none;
-      color: var(--text-muted);
+      color: var(--text-dim);
       cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text-muted);
       font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .pwd-toggle:hover { color: var(--accent-cyan); }
+    .error-alert {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      display: none;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--grad-primary);
+      border: none;
+      border-radius: 12px;
+      color: #090d16;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+    }
+    .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.5);
+    }
+    .back-link {
+      display: inline-block;
       margin-top: 1.5rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
     }
-    .back-home:hover {
-      color: var(--accent-cyan);
-    }
+    .back-link:hover { color: var(--accent-cyan); }
   </style>
 </head>
 <body>
 
-  <!-- Particles Background -->
-  <div id="particles-container"></div>
-
   <div class="login-card">
-    <div class="login-brand">
-      <h2>Sid<span class="gradient-text">.</span> CMS Login</h2>
-      <p>Secure Portal for Siddhartha Patel Portfolio</p>
-    </div>
+    <div class="login-brand">Sid<span>.</span> CMS Login</div>
+    <p class="login-sub">Secure Portal for Siddhartha Patel Portfolio</p>
+
+    <div id="error-box" class="error-alert">❌ Invalid Email or Password. Please try again.</div>
 
     <form id="login-form" onsubmit="handleLogin(event)">
       <div class="form-group">
-        <label for="admin-email">Admin Email Address</label>
-        <input type="email" id="admin-email" class="form-control" placeholder="siddharthapatel110@gmail.com" required>
+        <label for="email">Admin Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter admin email" required>
       </div>
 
       <div class="form-group">
-        <label for="admin-password">Password</label>
-        <div class="pwd-wrap">
-          <input type="password" id="admin-password" class="form-control" placeholder="••••••••••••" required>
+        <label for="password">Password</label>
+        <div class="pwd-wrapper">
+          <input type="password" id="password" class="form-control" placeholder="Enter password" required>
           <button type="button" class="pwd-toggle" onclick="togglePasswordVisibility()">Show</button>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
-        <span>Authenticate &amp; Enter CMS</span> &rarr;
+      <button type="submit" class="btn-login">
+        <span>Authenticate &amp; Enter CMS &rarr;</span>
       </button>
-
-      <div id="login-error" class="form-response-msg error" style="margin-top: 1.25rem; text-align: center;"></div>
     </form>
 
-    <div style="text-align: center;">
-      <a href="index.html" class="back-home">&larr; Return to Public Website</a>
-    </div>
+    <a href="index.html" class="back-link">&larr; Back to Main Website</a>
   </div>
 
   <script>
     function togglePasswordVisibility() {
-      const pwdInput = document.getElementById('admin-password');
+      const pwdInput = document.getElementById('password');
       const toggleBtn = document.querySelector('.pwd-toggle');
       if (pwdInput.type === 'password') {
         pwdInput.type = 'text';
@@ -117,43 +163,22 @@
 
     function handleLogin(e) {
       e.preventDefault();
-      const email = document.getElementById('admin-email').value.trim();
-      const password = document.getElementById('admin-password').value.trim();
-      const errorMsg = document.getElementById('login-error');
+      const email = document.getElementById('email').value.trim();
+      const pwd = document.getElementById('password').value;
+      const errorBox = document.getElementById('error-box');
 
-      // Credentials set by Siddhartha Patel:
-      // Email: siddharthapatel110@gmail.com
-      // Password: #%Gautam9845
-      if (email === 'siddharthapatel110@gmail.com' && password === '#%Gautam9845') {
-        sessionStorage.setItem('admin_authenticated', 'true');
-        sessionStorage.setItem('admin_user', email);
-        errorMsg.style.display = 'none';
+      if (email === 'siddharthapatel110@gmail.com' && pwd === '#%Gautam9845') {
+        sessionStorage.setItem('portfolio_admin_auth', 'true');
         window.location.href = 'admin.html';
       } else {
-        errorMsg.style.display = 'block';
-        errorMsg.textContent = '❌ Access Denied: Invalid Email Address or Password.';
+        errorBox.style.display = 'block';
+        setTimeout(() => { errorBox.style.display = 'none'; }, 4000);
       }
     }
 
-    // Particle effect script
-    (function initParticles() {
-      const container = document.getElementById('particles-container');
-      if (!container) return;
-      for (let i = 0; i < 30; i++) {
-        const p = document.createElement('div');
-        p.style.cssText = `
-          position: absolute;
-          left: ${Math.random() * 100}%;
-          top: ${Math.random() * 100}%;
-          width: ${Math.random() * 3 + 1}px;
-          height: ${Math.random() * 3 + 1}px;
-          background: var(--accent-cyan);
-          border-radius: 50%;
-          opacity: ${Math.random() * 0.3 + 0.1};
-        `;
-        container.appendChild(p);
-      }
-    })();
+    if (sessionStorage.getItem('portfolio_admin_auth') === 'true') {
+      window.location.href = 'admin.html';
+    }
   </script>
 </body>
 </html>
