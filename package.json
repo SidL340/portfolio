@@ -2,11 +2,5 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Siddhartha Patel Portfolio Website",
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "scripts": {
-    "build": "echo 'Static site build complete'"
-  }
+  "description": "Siddhartha Patel Portfolio Website"
 }
