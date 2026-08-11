@@ -679,6 +679,40 @@ document.addEventListener('mousemove', (e) => {
   }
 });
 
+// Clean Smooth Scrolling (Without mutating URL hash in browser address bar)
+function initCleanNavigation() {
+  // Clear any existing hash from address bar without reloading
+  if (window.location.hash) {
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+
+  // Intercept all internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').substring(1);
+      if (!targetId) return;
+
+      e.preventDefault();
+
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        // Smooth scroll to section
+        const headerOffset = 70;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        // Ensure URL remains clean without #hash
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      }
+    });
+  });
+}
+
 // Scroll Progress Bar & Nav Active Sync
 window.addEventListener('scroll', () => {
   const progressBar = document.getElementById('scroll-progress');
@@ -698,6 +732,7 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadCmsData();
+  initCleanNavigation();
   setTimeout(typeWriterEffect, 800);
 
   const hamburger = document.getElementById('hamburger');
