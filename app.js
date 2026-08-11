@@ -2,7 +2,6 @@
    Siddhartha Patel — Portfolio Interactive JavaScript & CMS Sync
    ========================================================================== */
 
-// ── Default CMS Data Model ──────────────────────────────────────────────
 const DEFAULT_CMS_DATA = {
   hero: {
     name: "Siddhartha Patel",
@@ -190,7 +189,7 @@ const DEFAULT_CMS_DATA = {
     },
     {
       id: "cert-workshop",
-      title: "Capacity Building & Empowerment Workshop",
+      title: "Capacity Building Workshop",
       issuer: "Leadership & Skill Development",
       desc: "Completed intensive workshop focusing on self-empowerment, leadership dynamics, team communication, and strategic problem solving.",
       img: "./img/workshop.png",
@@ -204,26 +203,32 @@ const DEFAULT_CMS_DATA = {
       img: "./img/img-2.png",
       link: ""
     }
+  ],
+  gallery: [
+    { id: "g1", title: "Problem Solving (Basic)", sub: "HackerRank Certification", img: "./img/pbasic.png" },
+    { id: "g2", title: "Problem Solving (Intermediate)", sub: "HackerRank Certification", img: "./img/pinter.png" },
+    { id: "g3", title: "Java Developer Certification", sub: "HackerRank Certification", img: "./img/java.png" },
+    { id: "g4", title: "Python (Basic) Certification", sub: "HackerRank Certification", img: "./img/pythonbasic.png" },
+    { id: "g5", title: "Capacity Building Workshop", sub: "Leadership Certificate", img: "./img/workshop.png" },
+    { id: "g6", title: "Samsung PRISM Research", sub: "ARM Processor Simulator", img: "./img/img-2.png" },
+    { id: "g7", title: "RFID Attendance System", sub: "Hardware IoT Showcase", img: "./img/rf.png" },
+    { id: "g8", title: "Car Rental Management", sub: "C++ OOP Application", img: "./img/carimg.png" },
+    { id: "g9", title: "Nepal Secondary School Portal", sub: "Web Design Project", img: "./img/school.png" }
   ]
 };
 
-// ── Global App State ───────────────────────────────────────────────────
 let currentCmsData = null;
 
 function loadCmsData() {
   try {
     const saved = localStorage.getItem('portfolio_cms_data');
-    if (saved) {
-      currentCmsData = JSON.parse(saved);
-    } else {
-      currentCmsData = DEFAULT_CMS_DATA;
-    }
+    if (saved) currentCmsData = JSON.parse(saved);
+    else currentCmsData = DEFAULT_CMS_DATA;
   } catch (e) {
-    console.warn("Failed loading custom CMS data, loading default:", e);
     currentCmsData = DEFAULT_CMS_DATA;
   }
 
-  // Update Hero & About DOM elements if customized
+  // Update Hero & About DOM elements
   if (currentCmsData.hero) {
     const heroName = document.getElementById('hero-name-display');
     const heroSub = document.getElementById('hero-sub-display');
@@ -256,12 +261,18 @@ function loadCmsData() {
     }
   }
 
-  // Render Projects & Certificates
   renderProjects('all', '');
   renderCertificates();
+  renderGallery();
 }
 
-// ── Render Projects Function ──────────────────────────────────────────
+// Multi-Tab Live Sync Event Listener
+window.addEventListener('storage', (e) => {
+  if (e.key === 'portfolio_cms_data') {
+    loadCmsData();
+  }
+});
+
 function renderProjects(filterCategory = 'all', searchQuery = '') {
   const container = document.getElementById('projects-grid');
   if (!container || !currentCmsData || !currentCmsData.projects) return;
@@ -322,7 +333,6 @@ function renderProjects(filterCategory = 'all', searchQuery = '') {
   `).join('');
 }
 
-// ── Render Certificates Function ──────────────────────────────────────
 function renderCertificates() {
   const container = document.getElementById('certs-grid');
   if (!container || !currentCmsData || !currentCmsData.certificates) return;
@@ -341,7 +351,7 @@ function renderCertificates() {
         <div class="cert-img-preview">
           <img src="${c.img}" alt="${c.title}">
           <div class="cert-zoom-overlay">
-            <span>🔍 Click to View Full Image</span>
+            <span>🔍 Click to View Full Certificate</span>
           </div>
         </div>
       ` : ''}
@@ -349,7 +359,22 @@ function renderCertificates() {
   `).join('');
 }
 
-// ── Project Modal Handlers ─────────────────────────────────────────────
+function renderGallery() {
+  const container = document.getElementById('gallery-grid');
+  if (!container || !currentCmsData || !currentCmsData.gallery) return;
+
+  container.innerHTML = currentCmsData.gallery.map(g => `
+    <div class="gallery-card reveal visible" onclick="openLightboxModal('${g.img}', '${g.title} — ${g.sub}')">
+      <img src="${g.img}" alt="${g.title}">
+      <div class="gallery-overlay">
+        <div class="gallery-title">${g.title}</div>
+        <div class="gallery-sub">${g.sub}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Modal Handlers
 function openProjectModal(projectId) {
   const modal = document.getElementById('project-modal');
   const content = document.getElementById('project-modal-content');
@@ -387,7 +412,7 @@ function openProjectModal(projectId) {
         </a>
       ` : ''}
       ${project.live ? `
-        <a href="${project.live}" target="_blank" class="btn btn-outline">
+        <a href="${project.live}" target="_blank" class="btn btn-primary" style="background: var(--grad-violet);">
           <span>Open Live Application</span> &#8599;
         </a>
       ` : ''}
@@ -402,7 +427,6 @@ function closeProjectModal() {
   if (modal) modal.classList.remove('active');
 }
 
-// ── Lightbox Image Modal Handlers ─────────────────────────────────────
 function openLightboxModal(imgSrc, captionText) {
   const modal = document.getElementById('lightbox-modal');
   const imgEl = document.getElementById('lightbox-img-element');
@@ -419,7 +443,6 @@ function closeLightboxModal() {
   if (modal) modal.classList.remove('active');
 }
 
-// Close modals when clicking backdrop
 window.addEventListener('click', (e) => {
   const pModal = document.getElementById('project-modal');
   const lModal = document.getElementById('lightbox-modal');
@@ -427,15 +450,15 @@ window.addEventListener('click', (e) => {
   if (e.target === lModal) closeLightboxModal();
 });
 
-// ── Background Particle Canvas ─────────────────────────────────────────
+// Particle Background Canvas
 (function initParticles() {
   const container = document.getElementById('particles-container');
   if (!container) return;
 
-  const count = 50;
+  const count = 55;
   for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
-    const size = Math.random() * 3 + 1.5;
+    const size = Math.random() * 3.5 + 1.5;
     const x = Math.random() * 100;
     const y = Math.random() * 100;
     const dur = Math.random() * 18 + 12;
@@ -468,7 +491,7 @@ window.addEventListener('click', (e) => {
   document.head.appendChild(keyframesStyle);
 })();
 
-// ── Typewriter Animation ───────────────────────────────────────────────
+// Typewriter Roles
 const ROLES = [
   'AI/ML Developer',
   'Java Developer',
@@ -503,19 +526,41 @@ function typeWriterEffect() {
   }
 }
 
-// ── Header Scroll & Navigation Setup ──────────────────────────────────
+// Glowing Mouse Cursor Follower
+document.addEventListener('mousemove', (e) => {
+  const dot = document.getElementById('cursor-dot');
+  const blur = document.getElementById('cursor-blur');
+  if (dot) {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+  }
+  if (blur) {
+    blur.style.left = e.clientX + 'px';
+    blur.style.top = e.clientY + 'px';
+  }
+});
+
+// Scroll Progress Bar & Nav Active Sync
+window.addEventListener('scroll', () => {
+  const progressBar = document.getElementById('scroll-progress');
+  if (progressBar) {
+    const winScroll = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+  }
+
+  const header = document.getElementById('header');
+  if (header) {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+}, { passive: true });
+
 document.addEventListener('DOMContentLoaded', () => {
   loadCmsData();
   setTimeout(typeWriterEffect, 800);
 
-  // Header scroll state
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  }, { passive: true });
-
-  // Mobile drawer toggle
   const hamburger = document.getElementById('hamburger');
   const navList = document.getElementById('nav-list');
   if (hamburger && navList) {
@@ -532,7 +577,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reveal on scroll observers
   const revealElements = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -544,7 +588,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // Skill progress bar animations on scroll
   const skillFills = document.querySelectorAll('.skill-fill-bar');
   const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -558,7 +601,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.2 });
   skillFills.forEach(f => skillObserver.observe(f));
 
-  // Search input handler
   const searchInput = document.getElementById('project-search-input');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -568,7 +610,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Filter button handlers
   const filterPills = document.querySelectorAll('.filter-pill');
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -580,7 +621,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ── Contact Form Submission Handler ────────────────────────────────────
 function handleContactSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('cf-name').value.trim();

@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "outputDirectory": ".",
+  "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.siddharthapatel.com.np"
+        }
+      ],
+      "destination": "/login.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
